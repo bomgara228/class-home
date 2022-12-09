@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;    
+        }
+        body {
+            width: 98vw;
+            height: 98vh;
+        }
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .block1 {
+            height: 100%;
+            width: 30%;
+            border: 2px solid black;
+            
+            
+           
+        }
+        .block2 {
+            height: 100%;
+            width: 30%;
+            border: 2px solid black;
+        }
+        .block3 {
+            height: 100%;
+            width: 30%;
+            border: 2px solid black;
+        }
+        div {
+            width: 30px;
+            height: 30px;
+            
+            border: 1px solid black;
+            display: inline-block;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="block1"></div>
+        <div class="block2"></div>
+        <div class="block3"></div>
+    </div>
+    <script>
+        //1
+        /* let osn = document.querySelector('body');
+        let slov = prompt('Введите что-нибудь');
+        for (let i = 1; i <= 6; i++) {
+            let el4 = document.createElement(`h${i}`);
+            el4.textContent = slov;
+            osn.append(el4);
+        } */
+
+        //2
+        /* let el = prompt('Какой элемент создать?');
+        let tex = prompt('Введите текст внутри элемента')
+        let colr = prompt('Введите цвет элемента');
+        let osn = document.querySelector('body');
+        let el4 = document.createElement(el);
+        el4.style.color = colr;
+        el4.textContent = tex;
+        osn.append(el4); */
+
+
+        //3
+        /* let osn = document.querySelector('body');
+        for (let i = 1; i <= 20; i++){
+            let el = document.createElement('div');
+            function getRC() {
+            return Math.floor(Math.random() * 256);
+            }
+            el.style.backgroundColor =  `rgb(${getRC()},${getRC()},${getRC()})`;
+            osn.append(el);
+        } */
+
+
+        //4
+        
+        /* for ( let i = 1; i<=5; i++) {
+        setTimeout(function() {
+            
+                let el = document.createElement('div');
+                el.textContent = i;
+                document.body.append(el);
+        }, `${i}000`)        
+    }    */
+        
+        //5
+        /* let masin1 = 0;
+        let masin2 = 0;
+        let masin3 = 0;
+        let masin4 = 0;
+        let masin5 = 0;
+        do {
+            masin1 = Math.floor(Math.random() * (36)) +1;
+            masin2 = Math.floor(Math.random() * (36)) +1;
+            masin3 = Math.floor(Math.random() * (36)) +1;
+            masin4 = Math.floor(Math.random() * (36)) +1;
+            masin5 = Math.floor(Math.random() * (36)) +1;
+        } while (masin1 == masin2 || masin1 == masin3 || masin1 == masin4 || masin1 == masin5 || masin2 == masin3 || masin2 == masin4 || masin2 == masin5 || masin3 == masin4 || masin3 == masin5 || masin4 == masin5 )
+        for ( let i = 1; i<=5; i++) {
+        setTimeout(function() {
+            let el = document.createElement('div');
+            if (i == 1) {
+                el.textContent = masin1;
+            } else if (i == 2) {
+                el.textContent = masin2;
+            } else if (i == 3) {
+                el.textContent = masin3;
+            } else if (i == 4) {
+                el.textContent = masin4;
+            } else {
+                el.textContent = masin5;
+            }
+            document.body.append(el);
+        }, `${i}000`)        
+    }  */ 
+        //6
+        let gr = document.querySelector('.block1');
+        let bl = document.querySelector('.block2');
+        let rdo = document.querySelector('.block3');
+        let gren = 0;
+        let blu = 0;
+        let rd = 0;
+        let start = setInterval(() => {
+            let vib = Math.floor(Math.random() * 3) + 1;
+        
+        
+            if (vib ==1) {
+                gren++;
+                let el = document.createElement('div');
+                el.textContent = gren;
+                el.style.backgroundColor = `green`;
+                
+                gr.append(el);
+            } else if (vib == 2) {
+                blu++;
+                let el = document.createElement('div');
+                el.textContent = blu;
+                el.style.backgroundColor = `blue`;
+                
+                bl.append(el);
+            } else {
+                rd++;
+                let el = document.createElement('div');
+                el.textContent = rd;
+                el.style.backgroundColor = `red`;
+                
+                rdo.append(el);
+            }
+            if (rd == 200 || blu == 200 || gren == 200) {
+                clearInterval(start);
+            }
+            }, 20);
+            
+        
+        
+    </script>
+</body>
+</html>
